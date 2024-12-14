@@ -39,7 +39,7 @@ SavePulse is a web and mobile application designed to enhance trust and transpar
 ## Technologies
 - **Frontend:** Built using Next.js for web platforms.
 - **Backend:** Powered by the Gin framework for robust API development.
-- **Database:** Securely stores donor information and blood serial tracking (e.g., PostgreSQL, MongoDB).
+- **Database:** Securely stores donor information and blood serial tracking (for a start SQLite(easy integration).later as Database grows PostgreSQL, MongoDB).
 - **Notifications:** Integration with SMS or email services for donor communication.
 
 ## Getting Started
