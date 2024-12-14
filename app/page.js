@@ -8,6 +8,8 @@ function LandingPage() {
 <Link href="/signup" className="nav-link">Sign In</Link>
 <Link href="/login" className="nav-link">Log In</Link>
 <Link href="/satelitteLogin" className="nav-link">Satelitte Log In</Link>
+<Link href="/satelitteSignup" className="nav-link">Satelitte Log In</Link>
+
 
 
 <Link href="/satelitteSignUp" className="nav-link">Satelitte</Link>
