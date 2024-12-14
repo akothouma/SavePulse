@@ -79,7 +79,7 @@ SavePulse is a web and mobile application designed to enhance trust and transpar
 We welcome contributions to make SavePulse better! Please follow the [CONTRIBUTING.md](CONTRIBUTING.md) guidelines.
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT Licence. See the [LICENCE](LICENCE) file for details.
 
 ## Contact
 For questions or support, please contact us at support@savepulse.org.
