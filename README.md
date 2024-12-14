@@ -49,7 +49,7 @@ SavePulse is a web and mobile application designed to enhance trust and transpar
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/SavePulse.git
+   git clone https://github.com/akothouma/SavePulse.git
    ```
 2. Navigate to the project directory:
    ```bash
