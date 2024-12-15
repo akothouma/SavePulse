@@ -1,8 +1,10 @@
 import React from 'react'
 import Link from "next/link"
 import Image from 'next/image';
+// import BookAppointment from './bookAppointment/page';
 
 import './globals.css'
+import BookAppointment from './bookAppointment/page';
 
 export default function LandingPage() {
   return (
@@ -13,7 +15,7 @@ export default function LandingPage() {
     <h2 className="text-4xl font-bold text-gray-900">Save Lives, One Drop at a Time</h2>
     <p className="mt-4 text-xl text-gray-600">Track your blood donation journey and see your impact</p>
   </div>
-
+  
   {/* Centered Link Cards */}
   <div className="flex justify-center gap-8">
     <Link href="/signup" className="bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition duration-300 text-center">
@@ -24,6 +26,10 @@ export default function LandingPage() {
     <Link href="/login" className="bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition duration-300 text-center">
       <div className="mx-auto mb-2 text-red-600 text-4xl">🩺</div>
       <span className="font-semibold text-gray-800">Donor Login</span>
+    </Link>
+    <Link href="/" className="bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition duration-300 text-center">
+      <div className="mx-auto mb-2 text-red-600 text-4xl">🩸</div>
+      <BookAppointment/>
     </Link>
   </div>
 </div>
