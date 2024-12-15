@@ -1,130 +1,85 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Global styles for the HTML body */
+:root {
+    --primary-color: #E60000;
+    --secondary-color: #FF3333;
+    --background-color: #F5F5F5;
+}
+
+html, body {
+  height: 100%;
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Nunito', sans-serif;
-  background-color: #f2f2f2;
-  color: #333;
-  line-height: 1.6;
+  background-color: var(--background-color);
+  font-family: 'Arial', sans-serif;
+
+  /* Add background image using Tailwind's utility classes */
+  background-image: url('/images/img7.jpg/'); /* Path to the background image */
+  background-size: cover; /* Ensures the image covers the entire viewport */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repeating the background image */
+  background-attachment: fixed; /* Keeps the background fixed when scrolling */
 }
 
-/* Header styles */
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  
+  /* Add these properties to center the grid */
+  justify-content: center; /* Horizontally centers the entire grid */
+  justify-items: center;   /* Centers each grid item horizontally */
+  max-width: 1200px;       /* Optional: limits max width and centers grid */
+  margin: 0 auto;          /* Centers the grid container itself */
 }
 
-header a {
-  color: #333;
-  text-decoration: none;
-  margin: 0 10px;
+.card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-header a:hover {
-  text-decoration: underline;
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
-/* Content styles */
-.content {
-  max-width: 960px;
-  margin: 0 auto;
+.card-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
 }
 
-/* Navigation styles */
-nav {
-  margin: 10px auto 80px;
-  padding: 10px 0;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  border-bottom: 1px solid #ddd;
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    transition: background-color 0.3s ease;
 }
 
-nav a {
-  margin-left: 12px;
+.btn-primary:hover {
+    background-color: var(--secondary-color);
 }
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #__next {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
 
-nav .logo {
-  margin-right: auto;
-}
-
-/* Footer styles */
-.footerdiv {
-  display: block;
-  text-align: center;
-  padding: 30px 0;
-  margin-top: 60px;
-  color: #777;
-  border-top: 1px solid #eaeaea;
-  background-color: #333;
-  color: #fff;
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-}
-
-.footerdiv p {
-  margin: 0;
-}
-
-.footerdiv ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  gap: 15px;
-}
-
-.footerdiv li {
-  cursor: pointer;
-}
-
-.footerdiv li:hover {
-  text-decoration: underline;
-}
-
-.footerdiv {
-  display: block;
-  text-align: center;
-  padding: 30px 0;
-  margin-top: 60px;
-  color: #777;
-  border-top: 1px solid #eaeaea;
-  background-color: #333;
-  color: #fff;
-  position: fixed; /* Changed from absolute to fixed */
-  width: 100%;
-  bottom: 0;
-}
-
-.footerdiv ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: space-between; /* Distribute space evenly */
-  align-items: center; /* Center items vertically */
-  gap: 5px; /* Space between items */
-  max-width: 960px; /* Optional: limit the width for better layout */
-  margin: 0 auto; /* Center the list within the footer */
-}
-
-.footerdiv li {
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-.footerdiv li:hover {
-  text-decoration: underline;
-  color: #ddd; /* Optional: change color on hover */
-}
-
-/* Main content styles */
-main {
-  padding: 20px;
-  min-height: calc(100vh - 160px); /* Adjust based on header and footer height */
+@media (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        grid-gap: 10px;
+        padding: 10px;
+    }
 }
