@@ -1,11 +1,20 @@
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./navbar.module.css";
 
 export default function Navbar() {
   return (
     <nav className={styles.nav}>
       <div className={styles["nav-logo"]}>
-        <Link href="/" className={styles["nav-link"]}>SavePulse</Link>
+        <Link href="/" className={styles["nav-link"]}>
+          <Image 
+            src="/images/img10.jpg" 
+            alt="SavePulse Logo" 
+            width={50}  
+            height={100} 
+            priority
+          />
+        </Link>
       </div>
       <div className={styles["nav-links"]}>
         <Link href="/" className={styles["nav-link"]}>Home</Link>
@@ -16,3 +25,4 @@ export default function Navbar() {
     </nav>
   );
 }
+
