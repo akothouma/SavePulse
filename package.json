@@ -9,11 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "mongoose": "^8.9.1",
     "next": "15.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
-  
   "devDependencies": {
     "css-loader": "^7.1.2",
     "postcss": "^8",

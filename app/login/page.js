@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import styles from './Login.module.css';
 
-export default function Login() {
+export default function UserLogin() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState(null);
@@ -10,7 +10,7 @@ export default function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:3000/login', {
+            const response = await fetch('api/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

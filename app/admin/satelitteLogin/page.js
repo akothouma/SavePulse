@@ -3,7 +3,7 @@ import { useState } from 'react';
 import styles from './Login.module.css'; // Importing the CSS Module
 
 export default function Login() {
-    const [satelitteID, setSatelitteID] = useState('');
+   // const [satelitteID, setSatelitteID] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState(null);
@@ -12,12 +12,12 @@ export default function Login() {
         e.preventDefault();
        
         try {
-            const response = await fetch('http://localhost:3000/satelitteLogin', {
+            const response = await fetch('/api/satelitteLogin', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({satelitteID, email, password}),
+                body: JSON.stringify({ email, password}),
             });
 
             const data = await response.json();
@@ -25,7 +25,7 @@ export default function Login() {
             if (response.ok) {
                 setMessage({ type: "success", text: data.message });
                 setTimeout(() => {
-                    window.location.href = '/satelitteDashboard/add'; // Redirect using window.location
+                    window.location.href = data.redirectUrl; // Redirect using window.location
                 }, 1000);
             } else {
                 setMessage({ type: "error", text: data.message });
@@ -38,19 +38,7 @@ export default function Login() {
     return (
         <div className={styles.container}>
             <form onSubmit={handleSubmit} className={styles.form}>
-                <h2>Satellite Login</h2>
-                <div className={styles.formGroup}>
-                    <label htmlFor="satelitteID">Satellite ID</label>
-                    <input 
-                        id="satelitteID"
-                        type="text" 
-                        value={satelitteID} 
-                        onChange={e => setSatelitteID(e.target.value)} 
-                        placeholder="Enter Satellite ID"
-                        required 
-                        className={styles.input} 
-                    />
-                </div>
+    
                 <div className={styles.formGroup}>
                     <label htmlFor="email">Email</label>
                     <input 

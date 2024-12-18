@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import styles from './SignUp.module.css';
 
-export default function SignUp() {
+export default function UserSignUp() {
     // const [userID, setUserID] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -14,7 +14,7 @@ export default function SignUp() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:3000/signup', {
+            const response = await fetch('api/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -27,7 +27,7 @@ export default function SignUp() {
             if (response.ok) {
                 setMessage({ type: "success", text: data.message });
                 setTimeout(() => {
-                    window.location.href = '/login';
+                    window.location.href = '/';
                 }, 1000);
             } else {
                 setMessage({ type: "error", text: data.message });

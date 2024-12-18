@@ -12,7 +12,7 @@ export default function DonorForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:3000/satelitteDashboard/add', {
+            const response = await fetch('app/donoradd', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
