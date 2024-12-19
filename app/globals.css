@@ -83,3 +83,7 @@ html, body {
         padding: 10px;
     }
 }
+.dashboard-content {
+  margin-left: 220px; /* adjust this value to set the margin between the sidebar and the content */
+  padding: 20px;
+}

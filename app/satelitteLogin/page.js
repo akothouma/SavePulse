@@ -12,7 +12,7 @@ export default function Login() {
         e.preventDefault();
        
         try {
-            const response = await fetch('/api/satelitteLogin', {
+            const response = await fetch('api/satelitteLogin', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

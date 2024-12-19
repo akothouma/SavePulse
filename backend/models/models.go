@@ -56,7 +56,7 @@ type DonorBlood struct {
 	Status        string
 	SatelliteID   string // foreign key
 	RegionalID    string // foreign key
-	HospitalID    string
+	HospitalID    string //foreign key
 	PatientNumber string
 	PatientUserID string
 	Feedback      string

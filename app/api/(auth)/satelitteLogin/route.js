@@ -29,7 +29,7 @@ export async function POST(request) {
             );
         }
 
-        const redirectUrl = `/admin/satelitteDashboard/${satellite._id}`;
+        const redirectUrl = `satelitteDashboard/${satellite._id}`;
         return NextResponse.json(
             { message: 'Login successful', redirectUrl },
             { status: 200 }

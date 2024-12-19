@@ -2,17 +2,17 @@
 
 import { useState } from 'react';
 import styles from './DonorForm.module.css';
+import { useParams } from 'next/navigation';
 
-export default function DonorForm() {
+export default function DonorForm({ satelliteId }) {
     const [userID, setUserID] = useState('');
     const [status, setStatus] = useState('');
-    const [satelliteId, setSatelliteId] = useState('');
     const [responseMessage, setResponseMessage] = useState('');
-
+    const { id } = useParams();
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('app/donoradd', {
+            const response = await fetch('/api/donoradd', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -20,7 +20,7 @@ export default function DonorForm() {
                 body: JSON.stringify({
                     userID,
                     status,
-                    satelliteId,
+                    satelliteID: id, // Use the satelliteId prop
                     sourceType: 'satellite' // Specify the source type
                 }),
             });
@@ -65,18 +65,7 @@ export default function DonorForm() {
                         placeholder="Enter your status" 
                     />
                 </div>
-                <div className={styles.formGroup}>
-                    <label htmlFor="satelliteId">Satellite ID:</label>
-                    <input 
-                        id="satelliteId" 
-                        type="text" 
-                        className={styles.input} 
-                        value={satelliteId} 
-                        onChange={(e) => setSatelliteId(e.target.value)} 
-                        required 
-                        placeholder="Enter Satellite ID" 
-                    />
-                </div>
+               
                 <button type="submit" className={styles.submitButton}>Submit Donation</button>
                 {responseMessage && 
                     <div className={`${styles.message} ${responseMessage.type === "success" ? styles.successMessage : styles.errorMessage}`}>
